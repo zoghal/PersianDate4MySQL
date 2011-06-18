@@ -1,0 +1,18 @@
+User can use these six functions, which are provided on a set.
+
+1. Pdate(datetime)
+Takes georgian datetime as input and gives jalali date in text format as output.
+2. PMONTH(datetime)
+Takes georgian datetime as input and gives jalali month number in text format as output.
+3. Pmonthname(datetime)
+Takes georgian datetime as input and gives jalali month name in text format as output.
+4. Pyear(datetime)
+Takes georgian datetime as input and gives jalali year number in text format as output.
+5. Pday(datetime)
+Takes georgian datetime as input and gives jalali day number in text format as output.
+6. Gdate(year smallint, month smallint, day smallint)
+Takes jalali date in year,month,day format as input and gives georgian date in datetime format as output.
+
+Here is simple line of sql code which you can use it to test the set of functions after downloading and importing the script.
+
+SELECT pdate(NOW()),pyear('2009-09-22'),pmonth('2009-09-22') , pmonthname( NOW()), gdate(1366,9,19);
