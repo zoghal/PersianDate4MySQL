@@ -12,7 +12,9 @@ Takes georgian datetime as input and gives jalali year number in text format as 
 Takes georgian datetime as input and gives jalali day number in text format as output.
 6. Gdate(year smallint, month smallint, day smallint)
 Takes jalali date in year,month,day format as input and gives georgian date in datetime format as output.
+7. Gdatestr(jdate char(10))
+Takes jalali date in string format (e.g: '1390/3/3', '1390/03/3', '1390/3/03, '1390/03/03') as input and gives georgian date in datetime format as output. You can not enter Jalali year in short form! e.g '90/03/03' shows the 90th Jalali year not 1390!
 
 Here is simple line of sql code which you can use it to test the set of functions after downloading and importing the script.
 
-SELECT pdate(NOW()),pyear('2009-09-22'),pmonth('2009-09-22') , pmonthname( NOW()), gdate(1366,9,19);
+SELECT pdate(NOW()),pyear('2009-09-22'),pmonth('2009-09-22') , pmonthname( NOW()), gdate(1366,9,19), gdatestr('1366/9/19');
