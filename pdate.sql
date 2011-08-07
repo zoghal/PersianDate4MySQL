@@ -498,3 +498,98 @@ BEGIN
 
 END;;
 DELIMITER ;
+
+-- ----------------------------
+-- Function structure for `gdatestr`
+-- ----------------------------
+DROP FUNCTION IF EXISTS `gdatestr`;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` FUNCTION `gdatestr`(`jdat` char(10) ) RETURNS datetime
+BEGIN
+# Copyright (C) 2011  Mehran . M . Spitman
+# WebLog spitman.azdaa.com
+# Version V1.0
+
+	DECLARE
+		i,j,e,k,mo,
+		gy, gm, gd,
+		g_day_no,j_day_no, bkab,jmm, mday,g_day_mo, jd, jy, jm
+    INT DEFAULT 0;
+	DECLARE resout char(100);
+	DECLARE jdd, jyd, jmd, jt varchar(100);
+  DECLARE fdate datetime;
+
+	SET jdd = SUBSTRING_INDEX(jdat,'/',-1);
+	SET jt = SUBSTRING_INDEX(jdat,'/',2);
+	SET jyd = SUBSTRING_INDEX(jt,'/',1);
+	SET jmd = SUBSTRING_INDEX(jt,'/',-1);
+	
+	SET jd = CAST(jdd as SIGNED);
+	SET jy = CAST(jyd as SIGNED);
+	SET jm = CAST(jmd as SIGNED);
+
+
+
+
+  SET bkab = __mymod(jy,33);
+
+  IF (bkab = 1 or bkab= 5 or bkab = 9 or bkab = 13 or bkab = 17 or bkab = 22 or bkab = 26 or bkab = 30) THEN
+    SET j=1;
+  end IF;
+
+	CASE jm
+		WHEN 1 THEN IF jd > _jdmarray2(jm) or jd <= 0 THEN SET e=1; end IF;
+		WHEN 2 THEN IF jd > _jdmarray2(jm) or jd <= 0 THEN SET e=1; end IF;
+		WHEN 3 THEN IF jd > _jdmarray2(jm) or jd <= 0 THEN SET e=1; end IF;
+		WHEN 4 THEN IF jd > _jdmarray2(jm) or jd <= 0 THEN SET e=1; end IF;
+		WHEN 5 THEN IF jd > _jdmarray2(jm) or jd <= 0 THEN SET e=1; end IF;
+		WHEN 6 THEN IF jd > _jdmarray2(jm) or jd <= 0 THEN SET e=1; end IF;
+		WHEN 7 THEN IF jd > _jdmarray2(jm) or jd <= 0 THEN SET e=1; end IF;
+		WHEN 8 THEN IF jd > _jdmarray2(jm) or jd <= 0 THEN SET e=1; end IF;
+		WHEN 9 THEN IF jd > _jdmarray2(jm) or jd <= 0 THEN SET e=1; end IF;
+		WHEN 10 THEN IF jd > _jdmarray2(jm) or jd <= 0 THEN SET e=1; end IF;
+		WHEN 11 THEN IF jd > _jdmarray2(jm) or jd <= 0 THEN SET e=1; end IF;
+		WHEN 12 THEN IF jd > _jdmarray2(jm)+j or jd <= 0 THEN SET e=1; end IF;
+	END CASE;
+  IF jm > 12 or jm <= 0 THEN SET e=1; end IF;
+  IF jy <= 0 THEN SET e=1; end IF;
+
+  IF e>0 THEN
+    RETURN 0;
+  end IF;
+
+  IF (jm>=11) or (jm=10 and jd>=11) THEN
+    SET i=1;
+  end IF;
+  SET gy = jy + 621 + i;
+
+  IF (__mymod(gy-1,4)=0 and __mymod(gy-1,100)<>0) or (__mymod(gy-1,400)=0) THEN
+    SET k=1;
+  end IF;
+
+  SET jmm=jm-1;
+
+  WHILE (jmm > 0) do
+    SET mday=mday+_jdmarray2(jmm);
+    SET jmm=jmm-1;
+  end WHILE;
+
+  SET j_day_no=(jy-1)*365+(__mydiv(jy,4))+mday+jd;
+  SET g_day_no=j_day_no+226899;
+
+  SET g_day_no=g_day_no-(__mydiv(gy-1,4));
+  SET g_day_mo=__mymod(g_day_no,365);
+
+  SET mo=0;
+  SET gm=gm+1;
+  while g_day_mo>_gdmarray(mo) do
+    SET g_day_mo=g_day_mo-_gdmarray(mo);
+    SET mo=mo+1;
+    SET gm=gm+1;
+  end WHILE;
+  SET gd=g_day_mo;
+
+  RETURN CONCAT_WS('-',gy,gm,gd);
+
+END;;
+DELIMITER ;
