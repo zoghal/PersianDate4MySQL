@@ -462,7 +462,7 @@ BEGIN
 		RETURN 0;
 	END IF;
 
-	IF (jm> = 11) or (jm = 10 and jd >= 11) THEN
+	IF (jm >= 11) or (jm = 10 and jd >= 11) THEN
 		SET i = 1;
 	END IF;
 
