@@ -14,7 +14,10 @@
 --    You should have received a copy of the GNU General Public License
 --    along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 collate utf8_persian_ci; */
 
 
 -- ----------------------------
@@ -22,7 +25,7 @@
 -- ----------------------------
 DROP FUNCTION IF EXISTS `__mydiv`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `__mydiv`(`a` int, `b` int) RETURNS bigint(20)
+CREATE  FUNCTION `__mydiv`(`a` int, `b` int) RETURNS bigint(20) DETERMINISTIC NO SQL SQL SECURITY INVOKER
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
 # WebLog : www.saleh.soozanchi.ir
@@ -37,7 +40,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `__mymod`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `__mymod`(`a` int, `b` int) RETURNS bigint(20)
+CREATE FUNCTION `__mymod`(`a` int, `b` int) RETURNS bigint(20) DETERMINISTIC NO SQL SQL SECURITY INVOKER
 BEGIN
 # Copyright (C) 2011-2012 Mehran . M . Spitman
 # WebLog :spitman.azdaa.com
@@ -52,7 +55,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `_gdmarray`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `_gdmarray`(`m` smallint) RETURNS smallint(2)
+CREATE  FUNCTION `_gdmarray`(`m` smallint) RETURNS smallint(2) DETERMINISTIC NO SQL SQL SECURITY INVOKER
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
 # WebLog : www.saleh.soozanchi.ir
@@ -81,7 +84,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `_jdmarray`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `_jdmarray`(`m` smallint) RETURNS smallint(2)
+CREATE FUNCTION `_jdmarray`(`m` smallint) RETURNS smallint(2) DETERMINISTIC NO SQL SQL SECURITY INVOKER
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
 # WebLog : www.saleh.soozanchi.ir
@@ -110,7 +113,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `_jdmarray2`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `_jdmarray2`(`m` smallint) RETURNS smallint(2)
+CREATE FUNCTION `_jdmarray2`(`m` smallint) RETURNS smallint(2) DETERMINISTIC NO SQL SQL SECURITY INVOKER
 BEGIN
 # Copyright (C) 2011-2012 Mehran . M . Spitman
 # WebLog :spitman.azdaa.com
@@ -139,7 +142,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `pdate`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `pdate`(`gdate` datetime) RETURNS char(100) CHARSET utf8
+CREATE FUNCTION `pdate`(`gdate` datetime) RETURNS char(100) CHARSET utf8 DETERMINISTIC NO SQL SQL SECURITY INVOKER
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
 # WebLog : www.saleh.soozanchi.ir
@@ -205,7 +208,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `PMONTH`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `PMONTH`(`gdate` datetime) RETURNS char(100) CHARSET utf8
+CREATE FUNCTION `PMONTH`(`gdate` datetime) RETURNS char(100) CHARSET utf8 DETERMINISTIC NO SQL SQL SECURITY INVOKER
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
 # WebLog : www.saleh.soozanchi.ir
@@ -265,7 +268,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `pmonthname`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `pmonthname`(`gdate` datetime) RETURNS varchar(100) CHARSET utf8
+CREATE FUNCTION `pmonthname`(`gdate` datetime) RETURNS varchar(100) CHARSET utf8 DETERMINISTIC NO SQL SQL SECURITY INVOKER
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
 # WebLog : www.saleh.soozanchi.ir
@@ -294,7 +297,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `pyear`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `pyear`(`gdate` datetime) RETURNS char(100) CHARSET utf8
+CREATE FUNCTION `pyear`(`gdate` datetime) RETURNS char(100) CHARSET utf8 DETERMINISTIC NO SQL SQL SECURITY INVOKER
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
 # WebLog : www.saleh.soozanchi.ir
@@ -354,7 +357,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `pday`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `pday`(`gdate` datetime) RETURNS char(100) CHARSET utf8
+CREATE FUNCTION `pday`(`gdate` datetime) RETURNS char(100) CHARSET utf8 DETERMINISTIC NO SQL SQL SECURITY INVOKER
 BEGIN
 # Copyright (C) 2011-2012 Mohammad Saleh Souzanchi, Mehran . M . Spitman
 # WebLog : www.saleh.soozanchi.ir, spitman.azdaa.com
@@ -415,7 +418,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `_gdmarray2`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `_gdmarray2`(`m` smallint, `k` SMALLINT) RETURNS smallint(2)
+CREATE FUNCTION `_gdmarray2`(`m` smallint, `k` SMALLINT) RETURNS smallint(2) DETERMINISTIC NO SQL SQL SECURITY INVOKER
 BEGIN
 # Copyright (C) 2011-2012  Mehran . M . Spitman
 # WebLog :spitman.azdaa.com
@@ -445,7 +448,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `gdate`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `gdate`(`jy` smallint, `jm` smallint, `jd` smallint) RETURNS datetime
+CREATE FUNCTION `gdate`(`jy` smallint, `jm` smallint, `jd` smallint) RETURNS datetime DETERMINISTIC NO SQL SQL SECURITY INVOKER
 BEGIN
 # Copyright (C) 2011-2012 Mehran . M . Spitman
 # WebLog :spitman.azdaa.com
@@ -552,7 +555,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `gdatestr`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `gdatestr`(`jdat` char(10)) RETURNS datetime
+CREATE FUNCTION `gdatestr`(`jdat` char(10)) RETURNS datetime DETERMINISTIC NO SQL SQL SECURITY INVOKER
 BEGIN
 # Copyright (C) 2011-2012 Mehran . M . Spitman
 # WebLog spitman.azdaa.com
@@ -662,3 +665,7 @@ BEGIN
   RETURN CONCAT_WS('-',gy,gm,gd);
 END;;
 DELIMITER ;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
