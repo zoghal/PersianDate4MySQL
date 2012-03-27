@@ -14,7 +14,10 @@
 --    You should have received a copy of the GNU General Public License
 --    along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 collate utf8_persian_ci; */
 
 
 -- ----------------------------
@@ -662,3 +665,7 @@ BEGIN
   RETURN CONCAT_WS('-',gy,gm,gd);
 END;;
 DELIMITER ;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
