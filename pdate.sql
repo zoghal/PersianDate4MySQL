@@ -22,7 +22,7 @@
 -- ----------------------------
 DROP FUNCTION IF EXISTS `__mydiv`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `__mydiv`(`a` int, `b` int) RETURNS bigint(20)
+CREATE DEFINER=`root`@`localhost` FUNCTION `__mydiv`(`a` int, `b` int) RETURNS bigint(20)
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
 # WebLog : www.saleh.soozanchi.ir
@@ -37,7 +37,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `__mymod`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `__mymod`(`a` int, `b` int) RETURNS bigint(20)
+CREATE DEFINER=`root`@`localhost` FUNCTION `__mymod`(`a` int, `b` int) RETURNS bigint(20)
 BEGIN
 # Copyright (C) 2011-2012 Mehran . M . Spitman
 # WebLog :spitman.azdaa.com
@@ -52,7 +52,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `_gdmarray`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `_gdmarray`(`m` smallint) RETURNS smallint(2)
+CREATE DEFINER=`root`@`localhost` FUNCTION `_gdmarray`(`m` smallint) RETURNS smallint(2)
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
 # WebLog : www.saleh.soozanchi.ir
@@ -81,7 +81,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `_jdmarray`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `_jdmarray`(`m` smallint) RETURNS smallint(2)
+CREATE DEFINER=`root`@`localhost` FUNCTION `_jdmarray`(`m` smallint) RETURNS smallint(2)
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
 # WebLog : www.saleh.soozanchi.ir
@@ -110,7 +110,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `_jdmarray2`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `_jdmarray2`(`m` smallint) RETURNS smallint(2)
+CREATE DEFINER=`root`@`localhost` FUNCTION `_jdmarray2`(`m` smallint) RETURNS smallint(2)
 BEGIN
 # Copyright (C) 2011-2012 Mehran . M . Spitman
 # WebLog :spitman.azdaa.com
@@ -139,7 +139,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `pdate`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `pdate`(`gdate` datetime) RETURNS char(100) CHARSET utf8
+CREATE DEFINER=`root`@`localhost` FUNCTION `pdate`(`gdate` datetime) RETURNS char(100) CHARSET utf8
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
 # WebLog : www.saleh.soozanchi.ir
@@ -205,7 +205,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `PMONTH`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `PMONTH`(`gdate` datetime) RETURNS char(100) CHARSET utf8
+CREATE DEFINER=`root`@`localhost` FUNCTION `PMONTH`(`gdate` datetime) RETURNS char(100) CHARSET utf8
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
 # WebLog : www.saleh.soozanchi.ir
@@ -265,7 +265,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `pmonthname`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `pmonthname`(`gdate` datetime) RETURNS varchar(100) CHARSET utf8
+CREATE DEFINER=`root`@`localhost` FUNCTION `pmonthname`(`gdate` datetime) RETURNS varchar(100) CHARSET utf8
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
 # WebLog : www.saleh.soozanchi.ir
@@ -294,7 +294,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `pyear`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `pyear`(`gdate` datetime) RETURNS char(100) CHARSET utf8
+CREATE DEFINER=`root`@`localhost` FUNCTION `pyear`(`gdate` datetime) RETURNS char(100) CHARSET utf8
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
 # WebLog : www.saleh.soozanchi.ir
@@ -354,7 +354,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `pday`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `pday`(`gdate` datetime) RETURNS char(100) CHARSET utf8
+CREATE DEFINER=`root`@`localhost` FUNCTION `pday`(`gdate` datetime) RETURNS char(100) CHARSET utf8
 BEGIN
 # Copyright (C) 2011-2012 Mohammad Saleh Souzanchi, Mehran . M . Spitman
 # WebLog : www.saleh.soozanchi.ir, spitman.azdaa.com
@@ -415,7 +415,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `_gdmarray2`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `_gdmarray2`(`m` smallint, `k` SMALLINT) RETURNS smallint(2)
+CREATE DEFINER=`root`@`localhost` FUNCTION `_gdmarray2`(`m` smallint, `k` SMALLINT) RETURNS smallint(2)
 BEGIN
 # Copyright (C) 2011-2012  Mehran . M . Spitman
 # WebLog :spitman.azdaa.com
@@ -445,7 +445,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `gdate`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `gdate`(`jy` smallint, `jm` smallint, `jd` smallint) RETURNS datetime
+CREATE DEFINER=`root`@`localhost` FUNCTION `gdate`(`jy` smallint, `jm` smallint, `jd` smallint) RETURNS datetime
 BEGIN
 # Copyright (C) 2011-2012 Mehran . M . Spitman
 # WebLog :spitman.azdaa.com
@@ -552,7 +552,7 @@ DELIMITER ;
 -- ----------------------------
 DROP FUNCTION IF EXISTS `gdatestr`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`127.0.0.1` FUNCTION `gdatestr`(`jdat` char(10)) RETURNS datetime
+CREATE DEFINER=`root`@`localhost` FUNCTION `gdatestr`(`jdat` char(10)) RETURNS datetime
 BEGIN
 # Copyright (C) 2011-2012 Mehran . M . Spitman
 # WebLog spitman.azdaa.com
