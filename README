@@ -1,3 +1,38 @@
+[MySQL] pDate
+==========
+
+**Contents/Menu**
+- [About](#about)
+- [Requirements](#requirements)
+- [Download](#download)
+- [Installation](#installation)
+- [Help/Wiki](#help/wiki)
+- [License](#license)
+- [Issues/Feedbacks](#issues/feedbacks)
+
+
+About
+----------
+[MySQL] **pDate** is a Gregorian / Jalali date converter functions for MySQL.
+
+Requirements
+----------
+- MySQL +4
+
+Download
+----------
+- **Official**<br/>
+zip: [https://github.com/zoghal/Presian-Date-for-MySQL/zipball/master](https://github.com/zoghal/Presian-Date-for-MySQL/zipball/master)<br/>
+tgz: [https://github.com/zoghal/Presian-Date-for-MySQL/tarball/master](https://github.com/zoghal/Presian-Date-for-MySQL/tarball/master)<br/>
+<code>git clone http: https://github.com/zoghal/Presian-Date-for-MySQL.git
+git clone git://github.com/zoghal/Presian-Date-for-MySQL.git</code>
+
+Installation
+----------
+Execute the pDate.sql file.
+
+Help/Wiki
+----------
 User can use these six functions, which are provided on a set.
 
 1. Pdate(datetime)
@@ -18,3 +53,11 @@ Takes jalali date in string format (e.g: '1390/3/3', '1390/03/3', '1390/3/03, '1
 Here is simple line of sql code which you can use it to test the set of functions after downloading and importing the script.
 
 SELECT pdate(NOW()),pyear('2009-09-22'),pmonth('2009-09-22') , pmonthname( NOW()), gdate(1366,9,19), gdatestr('1366/9/19');
+
+License
+----------
+GNU General Public License. [http://www.gnu.org/licenses/gpl.txt](http://www.gnu.org/licenses/gpl.txt)
+
+Issues/Feedbacks
+----------
+[https://github.com/zoghal/Presian-Date-for-MySQL/issues](https://github.com/zoghal/Presian-Date-for-MySQL/issues)<br/>
