@@ -63,7 +63,7 @@ Here is simple line of sql code which you can use it to test the set of function
 
 ```
 SELECT	pdate(NOW()),
-	pyear('2009-09-22'),
+		pyear('2009-09-22'),
         pmonth('2009-09-22'),
         pmonthname(NOW()),
         gdate(1366,9,19),
