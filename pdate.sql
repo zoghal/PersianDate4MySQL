@@ -272,16 +272,16 @@ BEGIN
 # Version V1.0.1
 
 	CASE PMONTH(gdate)
-		WHEN 1 THEN RETURN 'فروردين';
-		WHEN 2 THEN RETURN 'ارديبهشت';
+		WHEN 1 THEN RETURN 'فروردین';
+		WHEN 2 THEN RETURN 'اردیبهشت';
 		WHEN 3 THEN	RETURN 'خرداد';
-		WHEN 4 THEN	RETURN 'تير';
+		WHEN 4 THEN	RETURN 'تیر';
 		WHEN 5 THEN	RETURN 'مرداد';
-		WHEN 6 THEN	RETURN 'شهريور';
+		WHEN 6 THEN	RETURN 'شهریور';
 		WHEN 7 THEN	RETURN 'مهر';
 		WHEN 8 THEN	RETURN 'آبان';
 		WHEN 9 THEN	RETURN 'آذر';
-		WHEN 10 THEN RETURN	'دي';
+		WHEN 10 THEN RETURN	'دی';
 		WHEN 11 THEN RETURN	'بهمن';
 		WHEN 12 THEN RETURN	'اسفند';
 	END CASE;
