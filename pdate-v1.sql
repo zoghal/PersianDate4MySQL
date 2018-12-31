@@ -1,5 +1,5 @@
---    Gregorian - Jalali Date Converter Functions for Mysql
---    Copyright (C) 2012  Mohammad Saleh Souzanchi, Mehran . M . Spitman
+--    Gregorian - Jalali Date Converter Functions for Mysql, v2.0.0
+--    Copyright (C) 2019  Mohammad Saleh Souzanchi(saleh.souzanchi@gmail.com|https://github.com/zoghal), Mehran . M . Spitman
 --
 --    This program is free software: you can redistribute it and/or modify
 --    it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` FUNCTION `__mydiv`(`a` int, `b` int) RETURNS bigint(20)
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
-# WebLog : www.saleh.soozanchi.ir
+# WebLog : http://soozanchi.ir
 # Version V1.0.2
 
 	return FLOOR(a / b);
@@ -55,7 +55,7 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` FUNCTION `_gdmarray`(`m` smallint) RETURNS smallint(2)
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
-# WebLog : www.saleh.soozanchi.ir
+# WebLog : http://soozanchi.ir
 # Version V1.0.1
 
 	CASE m
@@ -84,7 +84,7 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` FUNCTION `_jdmarray`(`m` smallint) RETURNS smallint(2)
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
-# WebLog : www.saleh.soozanchi.ir
+# WebLog : http://soozanchi.ir
 # Version V1.0.1
 
 	CASE m
@@ -142,7 +142,7 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` FUNCTION `pdate`(`gdate` datetime) RETURNS char(100) CHARSET utf8
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
-# WebLog : www.saleh.soozanchi.ir
+# WebLog : http://soozanchi.ir
 # Version V1.0.2
 
 	DECLARE 
@@ -208,7 +208,7 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` FUNCTION `PMONTH`(`gdate` datetime) RETURNS char(100) CHARSET utf8
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
-# WebLog : www.saleh.soozanchi.ir
+# WebLog : http://soozanchi.ir
 # Version V1.0.2
 
 	DECLARE 
@@ -268,7 +268,7 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` FUNCTION `pmonthname`(`gdate` datetime) RETURNS varchar(100) CHARSET utf8
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
-# WebLog : www.saleh.soozanchi.ir
+# WebLog : http://soozanchi.ir
 # Version V1.0.1
 
 	CASE PMONTH(gdate)
@@ -297,7 +297,7 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` FUNCTION `pyear`(`gdate` datetime) RETURNS char(100) CHARSET utf8
 BEGIN
 # Copyright (C) 2009-2012 Mohammad Saleh Souzanchi
-# WebLog : www.saleh.soozanchi.ir
+# WebLog : http://soozanchi.ir
 # Version V1.0.1
 
 	DECLARE
@@ -357,7 +357,7 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` FUNCTION `pday`(`gdate` datetime) RETURNS char(100) CHARSET utf8
 BEGIN
 # Copyright (C) 2011-2012 Mohammad Saleh Souzanchi, Mehran . M . Spitman
-# WebLog : www.saleh.soozanchi.ir, spitman.azdaa.com
+# WebLog : http://soozanchi.ir, spitman.azdaa.com
 # Version V1.0.1
 
 	DECLARE
