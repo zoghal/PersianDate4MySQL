@@ -160,8 +160,8 @@ BEGIN
 	DECLARE
 		i,
 		gy, gm, gd,
-		g_day_no, j_day_no, j_np,
-		jy, jm, jd INT DEFAULT 0; /* Can be unsigned int? */
+		g_day_no, j_day_no, j_np,jy INT DEFAULT 0;  /* Can be unsigned int? */
+	DECLARE jm, jd INT(2) ZEROFILL DEFAULT 0;
 	DECLARE resout char(100);
 	DECLARE ttime CHAR(20);
 
