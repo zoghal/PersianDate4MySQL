@@ -230,13 +230,10 @@ BEGIN
 		gy, gm, gd,
 		g_day_no, j_day_no, j_np,
 		jy, jm, jd INT DEFAULT 0; /* Can be unsigned int? */
-	DECLARE resout char(100);
-	DECLARE ttime CHAR(20);
 
 	SET gy = YEAR(gdate) - 1600;
 	SET gm = MONTH(gdate) - 1;
 	SET gd = DAY(gdate) - 1;
-	SET ttime = TIME(gdate);
 	SET g_day_no = ((365 * gy) + __mydiv(gy + 3, 4) - __mydiv(gy + 99, 100) + __mydiv(gy + 399, 400));
 	SET i = 0;
 
@@ -323,13 +320,10 @@ BEGIN
 		gy, gm, gd,
 		g_day_no, j_day_no, j_np,
 		jy, jm, jd INT DEFAULT 0; /* Can be unsigned int? */
-	DECLARE resout char(100);
-	DECLARE ttime CHAR(20);
 
 	SET gy = YEAR(gdate) - 1600;
 	SET gm = MONTH(gdate) - 1;
 	SET gd = DAY(gdate) - 1;
-	SET ttime = TIME(gdate);
 	SET g_day_no = ((365 * gy) + __mydiv(gy + 3, 4) - __mydiv(gy + 99, 100) + __mydiv(gy + 399, 400));
 	SET i = 0;
 
@@ -385,13 +379,10 @@ BEGIN
 		gy, gm, gd,
 		g_day_no, j_day_no, j_np,
 		jy, jm, jd INT DEFAULT 0; /* Can be unsigned int? */
-	DECLARE resout char(100);
-	DECLARE ttime CHAR(20);
 
 	SET gy = YEAR(gdate) - 1600;
 	SET gm = MONTH(gdate) - 1;
 	SET gd = DAY(gdate) - 1;
-	SET ttime = TIME(gdate);
 	SET g_day_no = ((365 * gy) + __mydiv(gy + 3, 4) - __mydiv(gy + 99 , 100) + __mydiv(gy + 399, 400));
 	SET i = 0;
 
@@ -480,7 +471,6 @@ BEGIN
 		gy, gm, gd,
 		g_day_no, j_day_no, bkab, jmm, mday, g_day_mo, bkab1, j1
 	INT DEFAULT 0; /* Can be unsigned int? */
-	DECLARE resout char(100);
 	DECLARE fdate datetime;
 
 
@@ -589,7 +579,6 @@ BEGIN
 		gy, gm, gd,
 		g_day_no, j_day_no, bkab, jmm, mday, g_day_mo, jd, jy, jm,bkab1,j1
 	INT DEFAULT 0; /* ### Can't be unsigned int! ### */
-	DECLARE resout char(100);
 	DECLARE jdd, jyd, jmd, jt varchar(100);
 	DECLARE fdate datetime;
 
