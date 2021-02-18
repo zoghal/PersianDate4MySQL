@@ -2,13 +2,13 @@
   
 
 Content:
-* [About](https://github.com/Mehdi-Hp/Presian-Date-for-MySQL#about)
-* [Requirements](https://github.com/Mehdi-Hp/Presian-Date-for-MySQL#requirements)
-* [Download](https://github.com/Mehdi-Hp/Presian-Date-for-MySQL#download)
-* [Installation](https://github.com/Mehdi-Hp/Presian-Date-for-MySQL#installation)
-* [Usage](https://github.com/Mehdi-Hp/Presian-Date-for-MySQL#https://github.com/Mehdi-Hp/Presian-Date-for-MySQL#usage)
-* [License](https://github.com/Mehdi-Hp/Presian-Date-for-MySQL#license)
-* [Issues/Feedbacks](https://github.com/Mehdi-Hp/Presian-Date-for-MySQL#https://github.com/Mehdi-Hp/Presian-Date-for-MySQL#issuesfeedbacks)
+* [About](#about)
+* [Requirements](#requirements)
+* [Download](#download)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Issues/Feedbacks](#issuesfeedbacks)
 
 
 ## About
