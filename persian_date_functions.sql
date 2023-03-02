@@ -15,6 +15,32 @@
 --    along with this program. If not, see <http://www.gnu.org/licenses/>.
 --    Pathed by Amir Mirmoeini (Added read-only + deterministic flags to prevent errors in new and strict MySql or MariaDB environments)
 
+-- ----------------------------
+-- This library belongs to Mohammad Saleh Souzanchi but the function below is written by @okaeiz
+-- Function structure for `NUM_EN2FA`
+-- ----------------------------
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `NUM_EN2FA`(`strdate` CHAR ( 10 )) RETURNS char(10) CHARSET utf8
+    READS SQL DATA
+    DETERMINISTIC
+BEGIN
+# Copyright (C) 2009-2022 Mohammad Saleh Souzanchi
+# WebLog : https://soozanchi.ir
+# Version V3.0.0
+
+	SET strdate = REPLACE ( strdate, '1', '۱' );
+	SET strdate = REPLACE ( strdate, '2', '۲' );
+	SET strdate = REPLACE ( strdate, '3', '۳' );
+	SET strdate = REPLACE ( strdate, '4', '۴' );
+	SET strdate = REPLACE ( strdate, '5', '۵' );
+	SET strdate = REPLACE ( strdate, '6', '۶' );
+	SET strdate = REPLACE ( strdate, '7', '۷' );
+	SET strdate = REPLACE ( strdate, '8', '۸' );
+	SET strdate = REPLACE ( strdate, '9', '۹' );
+	SET strdate = REPLACE ( strdate, '0', '۰' );
+	RETURN strdate;
+END
+
 
 -- ----------------------------
 -- Function structure for `NUM_FA2EN`
