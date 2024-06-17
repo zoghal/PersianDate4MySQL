@@ -1,5 +1,5 @@
---    Gregorian - Jalali Date Converter Functions for Mysql, v2.0.0
---    Copyright (C) 2019  Mohammad Saleh Souzanchi(saleh.souzanchi@gmail.com|https://github.com/zoghal), Mehran . M . Spitman
+--    Persian(Jalali) Date Converter Functions for Mysql, v3.0.0
+--    Copyright (C) 2009-2022  Mohammad Saleh Souzanchi(saleh.souzanchi@gmail.com | https://github.com/zoghal ), Mehran . M . Spitman
 --
 --    This program is free software: you can redistribute it and/or modify
 --    it under the terms of the GNU General Public License as published by
@@ -16,6 +16,30 @@
 --    Pathed by Amir Mirmoeini (Added read-only + deterministic flags to prevent errors in new and strict MySql or MariaDB environments)
 
 
+-- ----------------------------
+-- Function structure for `NUM_FA2EN`
+-- ----------------------------
+CREATE DEFINER=`root`@`localhost` FUNCTION `NUM_FA2EN`(`strdate` CHAR ( 10 )) RETURNS char(10) CHARSET utf8
+    READS SQL DATA
+    DETERMINISTIC
+BEGIN
+# Copyright (C) 2009-2022 Mohammad Saleh Souzanchi
+# WebLog : https://soozanchi.ir
+# Version V3.0.0
+
+	SET strdate = REPLACE ( strdate, '۱', '1' );
+	SET strdate = REPLACE ( strdate, '۲', '2' );
+	SET strdate = REPLACE ( strdate, '۳', '3' );
+	SET strdate = REPLACE ( strdate, '۴', '4' );
+	SET strdate = REPLACE ( strdate, '۵', '5' );
+	SET strdate = REPLACE ( strdate, '۶', '6' );
+	SET strdate = REPLACE ( strdate, '۷', '7' );
+	SET strdate = REPLACE ( strdate, '۸', '8' );
+	SET strdate = REPLACE ( strdate, '۹', '9' );
+	SET strdate = REPLACE ( strdate, '۰', '0' );
+	RETURN strdate;
+END
+
 
 -- ----------------------------
 -- Function structure for `__mydiv`
@@ -26,8 +50,8 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `__mydiv`(`a` int, `b` int) RETURNS b
 READS SQL DATA
 DETERMINISTIC
 BEGIN
-# Copyright (C) 2009-2019 Mohammad Saleh Souzanchi
-# WebLog : www.saleh.soozanchi.ir
+# Copyright (C) 2009-2022 Mohammad Saleh Souzanchi
+# WebLog : https://soozanchi.ir
 # Version V2.0.0
 
 	return FLOOR(a / b);
@@ -43,7 +67,7 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `__mymod`(`a` int, `b` int) RETURNS b
 READS SQL DATA
 DETERMINISTIC
 BEGIN
-# Copyright (C) 2011-2019 Mehran . M . Spitman
+# Copyright (C) 2011-2022 Mehran . M . Spitman
 # WebLog :spitman.azdaa.com
 # Version V2.0.0
 
@@ -60,8 +84,8 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `_gdmarray`(`m` smallint) RETURNS sma
 READS SQL DATA
 DETERMINISTIC
 BEGIN
-# Copyright (C) 2009-2019 Mohammad Saleh Souzanchi
-# WebLog : www.saleh.soozanchi.ir
+# Copyright (C) 2009-2022 Mohammad Saleh Souzanchi
+# WebLog : https://soozanchi.ir
 # Version V2.0.0
 
 	CASE m
@@ -91,8 +115,8 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `_jdmarray`(`m` smallint) RETURNS sma
 READS SQL DATA
 DETERMINISTIC
 BEGIN
-# Copyright (C) 2009-2019 Mohammad Saleh Souzanchi
-# WebLog : www.saleh.soozanchi.ir
+# Copyright (C) 2009-2022 Mohammad Saleh Souzanchi
+# WebLog : https://soozanchi.ir
 # Version V2.0.0
 
 	CASE m
@@ -122,7 +146,7 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `_jdmarray2`(`m` smallint) RETURNS sm
 READS SQL DATA
 DETERMINISTIC
 BEGIN
-# Copyright (C) 2011-2019 Mehran . M . Spitman
+# Copyright (C) 2011-2022 Mehran . M . Spitman
 # WebLog :spitman.azdaa.com
 # Version V2.0.0
 
@@ -153,8 +177,8 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `pdate`(`gdate` datetime) RETURNS cha
 READS SQL DATA
 DETERMINISTIC
 BEGIN
-# Copyright (C) 2009-2019 Mohammad Saleh Souzanchi
-# WebLog : www.saleh.soozanchi.ir
+# Copyright (C) 2009-2022 Mohammad Saleh Souzanchi
+# WebLog : https://soozanchi.ir
 # Version V2.0.0
 
 	DECLARE
@@ -221,8 +245,8 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `PMONTH`(`gdate` datetime) RETURNS ch
 READS SQL DATA
 DETERMINISTIC
 BEGIN
-# Copyright (C) 2009-2019 Mohammad Saleh Souzanchi
-# WebLog : www.saleh.soozanchi.ir
+# Copyright (C) 2009-2022 Mohammad Saleh Souzanchi
+# WebLog : https://soozanchi.ir
 # Version V2.0.0
 
 	DECLARE
@@ -280,8 +304,8 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `pmonthname`(`gdate` datetime) RETURN
 READS SQL DATA
 DETERMINISTIC
 BEGIN
-# Copyright (C) 2009-2019 Mohammad Saleh Souzanchi
-# WebLog : www.saleh.soozanchi.ir
+# Copyright (C) 2009-2022 Mohammad Saleh Souzanchi
+# WebLog : https://soozanchi.ir
 # Version V2.0.0
 
 	CASE PMONTH(gdate)
@@ -311,8 +335,8 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `pyear`(`gdate` datetime) RETURNS cha
 READS SQL DATA
 DETERMINISTIC
 BEGIN
-# Copyright (C) 2009-2019 Mohammad Saleh Souzanchi
-# WebLog : www.saleh.soozanchi.ir
+# Copyright (C) 2009-2022 Mohammad Saleh Souzanchi
+# WebLog : https://soozanchi.ir
 # Version V2.0.0
 
 	DECLARE
@@ -370,8 +394,8 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `pday`(`gdate` datetime) RETURNS char
 READS SQL DATA
 DETERMINISTIC
 BEGIN
-# Copyright (C) 2011-2019 Mohammad Saleh Souzanchi, Mehran . M . Spitman
-# WebLog : www.saleh.soozanchi.ir, spitman.azdaa.com
+# Copyright (C) 2011-2022 Mohammad Saleh Souzanchi, Mehran . M . Spitman
+# WebLog : https://soozanchi.ir, spitman.azdaa.com
 # Version V2.0.0
 
 	DECLARE
@@ -430,7 +454,7 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `_gdmarray2`(`m` smallint, `k` SMALLI
 READS SQL DATA
 DETERMINISTIC
 BEGIN
-# Copyright (C) 2011-2019  Mehran . M . Spitman
+# Copyright (C) 2011-2022  Mehran . M . Spitman
 # WebLog :spitman.azdaa.com
 # Version V2.0.0
 
@@ -462,7 +486,7 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `gdate`(`jy` smallint, `jm` smallint,
 READS SQL DATA
 DETERMINISTIC
 BEGIN
-# Copyright (C) 2011-2019 Mehran . M . Spitman
+# Copyright (C) 2011-2022 Mehran . M . Spitman
 # WebLog :spitman.azdaa.com
 # Version V2.0.0
 
@@ -570,7 +594,7 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `gdatestr`(`jdat` char(10)) RETURNS d
 READS SQL DATA
 DETERMINISTIC
 BEGIN
-# Copyright (C) 2011-2019 Mehran . M . Spitman
+# Copyright (C) 2011-2022 Mehran . M . Spitman
 # WebLog spitman.azdaa.com
 # Version V2.0.0
 
