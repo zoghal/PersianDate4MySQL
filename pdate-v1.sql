@@ -662,3 +662,126 @@ BEGIN
   RETURN CONCAT_WS('-',gy,gm,gd);
 END;;
 DELIMITER ;
+
+-- Function structure for `pdate2`
+-- ----------------------------
+DROP FUNCTION IF EXISTS `pdate2`;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` FUNCTION `pdate2`(`gdate` datetime) RETURNS char(100) CHARSET utf8
+BEGIN
+# Hamed Esfahanian
+# Version V1.0.3
+
+        DECLARE 
+                i,
+                gy, gm, gd,
+                g_day_no, j_day_no, j_np,
+                jy, jm, jd INT DEFAULT 0; /* Can be unsigned int? */
+        DECLARE resout char(100);
+        DECLARE ttime varchar(20);
+
+        SET gy = YEAR(gdate) - 1600;
+        SET gm = MONTH(gdate) - 1;
+        SET gd = DAY(gdate) - 1;
+        SET ttime = TIME(gdate);
+        SET g_day_no = ((365 * gy) + __mydiv(gy + 3, 4) - __mydiv(gy + 99, 100) + __mydiv (gy + 399, 400));
+        SET i = 0;
+
+        WHILE (i < gm) do
+                SET g_day_no = g_day_no + _gdmarray(i);
+                SET i = i + 1; 
+        END WHILE;
+
+        IF gm > 1 and ((gy % 4 = 0 and gy % 100 <> 0)) or gy % 400 = 0 THEN 
+                SET g_day_no =  g_day_no + 1;
+        END IF;
+        
+        SET g_day_no = g_day_no + gd; 
+        SET j_day_no = g_day_no - 79;
+        SET j_np = j_day_no DIV 12053;
+        SET j_day_no = j_day_no % 12053;
+        SET jy = 979 + 33 * j_np + 4 * __mydiv(j_day_no, 1461);
+        SET j_day_no = j_day_no % 1461;
+
+        IF j_day_no >= 366 then 
+                SET jy = jy + __mydiv(j_day_no - 1, 365);
+                SET j_day_no = (j_day_no - 1) % 365;
+        END IF;
+
+        SET i = 0;
+
+        WHILE (i < 11 and j_day_no >= _jdmarray(i)) do
+                SET j_day_no = j_day_no - _jdmarray(i);
+                SET i = i + 1;
+        END WHILE;
+
+        SET jm = i + 1;
+        SET jd = j_day_no + 1;
+        SET resout = CONCAT_WS ('-', jy, LPAD(jm, 2, '0'), LPAD(jd, 2, '0'));
+        IF (ttime <> '00:00:00') then
+                SET resout = CONCAT_WS(' ', resout, ttime);
+        END IF;
+
+        RETURN resout;
+END;;
+DELIMITER ;
+
+
+-- ----------------------------
+-- Function structure for `pmonth2`
+-- ----------------------------
+DROP FUNCTION IF EXISTS `PMONTH2`;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` FUNCTION `PMONTH2`(`gdate` datetime) RETURNS char(100) CHARSET utf8
+BEGIN
+# Hamed Esfahanian
+# Version V1.0.3
+
+        DECLARE 
+                i,
+                gy, gm, gd,
+                g_day_no, j_day_no, j_np,
+                jy, jm, jd INT DEFAULT 0; /* Can be unsigned int? */
+        DECLARE resout char(100);
+        DECLARE ttime CHAR(20);
+
+        SET gy = YEAR(gdate) - 1600;
+        SET gm = MONTH(gdate) - 1;
+        SET gd = DAY(gdate) - 1;
+        SET ttime = TIME(gdate);
+        SET g_day_no = ((365 * gy) + __mydiv(gy + 3, 4) - __mydiv(gy + 99, 100) + __mydiv(gy + 399, 400));
+        SET i = 0;
+
+        WHILE (i < gm) do
+                SET g_day_no = g_day_no + _gdmarray(i);
+                SET i = i + 1; 
+        END WHILE;
+
+        IF gm > 1 and ((gy % 4 = 0 and gy % 100 <> 0)) or gy % 400 = 0 THEN 
+                SET g_day_no = g_day_no + 1;
+        END IF;
+        
+        SET g_day_no = g_day_no + gd; 
+        SET j_day_no = g_day_no - 79;
+        SET j_np = j_day_no DIV 12053;
+        set j_day_no = j_day_no % 12053;
+        SET jy = 979 + 33 * j_np + 4 * __mydiv(j_day_no, 1461);
+        SET j_day_no = j_day_no % 1461;
+
+        IF j_day_no >= 366 then 
+                SET jy = jy + __mydiv(j_day_no - 1, 365);
+                SET j_day_no =(j_day_no - 1) % 365;
+        END IF;
+
+        SET i = 0;
+
+        WHILE (i < 11 and j_day_no >= _jdmarray(i)) do
+                SET j_day_no = j_day_no - _jdmarray(i);
+                SET i = i + 1;
+        END WHILE;
+
+        SET jm = i + 1;
+        RETURN  LPAD(jm, 2, '0');
+END;;
+DELIMITER ;
+

@@ -37,8 +37,14 @@ You can use these six functions, which are provided on a set:
 #### PDATE(datetime)
 Takes georgian datetime as input and returns jalali date in text format.
 
+#### PDATE2(datetime)
+Takes georgian datetime as input and returns jalali date in text format with zero-padding for month and day: '1404/05/01' instead '1404/5/1'
+
 #### PMONTH(datetime)
 Takes georgian datetime as input and returns jalali month number in text format.
+
+#### PMONTH2(datetime)
+Takes georgian datetime as input and returns jalali month number in text format with zero-padding: '05' instead '5'
 
 #### PMONTHNAME(datetime)
 Takes georgian datetime as input and returns jalali month name in text format.
